@@ -19,15 +19,15 @@ jobs:
         run: mvn package
 
       - name: Login to Docker registry (if pushing)
-        if: patricedjate
+        if: patricedjate8@gmail.com
         uses: docker/login-action@v2
         with:
-          username: patricedjate
+          username: patricedjate8@gmail.com
           password: Djtp@0768
 
       - name: Build Docker image
         run: docker build -t my-spring-boot-app:latest .
 
       - name: Push Docker image (if pushing)
-        if: patricedjate
+        if: patricedjate8@gmail.com
         run: docker push my-spring-boot-app:latest
