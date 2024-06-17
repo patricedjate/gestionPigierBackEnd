@@ -31,5 +31,9 @@ public class stageController {
     String delete(@PathVariable Integer id) {
         return service.delete(id);
     }
+    @GetMapping("/liste/{domaine}")
+    List<stages> getAllByDomaine(@PathVariable String domaine) {
+        return service.stageByDomaine(domaine);
+    }
 
 }

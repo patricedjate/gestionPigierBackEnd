@@ -33,6 +33,8 @@ public class stageServiceImpl implements stageService {
                     p.setDate_fin(p.getDate_fin());
                     p.setTitre(p.getTitre());
                     p.setDescription(p.getDescription());
+                    p.setDomaine(p.getDomaine());
+                    p.setLieu(p.getLieu());
                     return repo.save(p);
                 }
         ).orElseThrow();
@@ -42,5 +44,10 @@ public class stageServiceImpl implements stageService {
     public String delete(Integer id) {
         repo.deleteById(id);
         return "élément supprimé avec succès";
+    }
+
+    @Override
+    public List<stages> stageByDomaine(String domaine) {
+        return repo.findByDomaine(domaine);
     }
 }
