@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        QODANA_TOKEN = credentials('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdhbml6YXRpb24iOiIzdzdZbyIsInByb2plY3QiOiJwbmpRTCIsInRva2VuIjoicG5qVk8ifQ.sPbqSLQsh3nmUDvgjUmjoTM0rrUNOjVpYASqxoaHvZI')
+        QODANA_TOKEN = credentials('qodana-token')
     }
     agent {
         docker {
