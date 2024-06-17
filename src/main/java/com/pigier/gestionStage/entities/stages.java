@@ -17,4 +17,6 @@ public class stages {
     private String description;
     private String date_debut;
     private String date_fin;
+    private String domaine;
+    private String lieu;
 }

@@ -9,4 +9,5 @@ public interface stageService {
     List<stages> liste();
     stages update(Integer id,stages stage);
     String delete(Integer id);
+    List<stages> stageByDomaine(String domaine);
 }
