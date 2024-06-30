@@ -14,5 +14,4 @@ public interface etudiantService {
     etudiants update(Integer id,etudiants etudiant);
     String delete(Integer id);
     void addStageToEtudiants(Integer etudiantId, Integer stageId);
-    void addCompteToEtudiants(Integer etudiantId, Integer userId);
 }

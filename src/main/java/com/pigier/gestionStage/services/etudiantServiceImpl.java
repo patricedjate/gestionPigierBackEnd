@@ -78,8 +78,4 @@ public class etudiantServiceImpl implements etudiantService {
         etudiant.getStage().add(stage);
     }
 
-    @Override
-    public void addCompteToEtudiants(Integer etudiantId, Integer userId) {
-
-    }
 }

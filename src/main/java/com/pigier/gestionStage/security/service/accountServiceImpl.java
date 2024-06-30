@@ -23,14 +23,7 @@ public class accountServiceImpl implements accountService {
         this.appRolesRepository = appRolesRepository;
         this.passwordEncoder = passwordEncoder;
     }
-/*
-    @Override
-    public appUser addUser(appUser user) {
-        String password = user.getPassword();
-        user.setPassword(passwordEncoder.encode(password));
-        return appUserRepository.save(user);
-    }
-*/
+
     @Override
     public appUser updateUser(Integer id,Integer roleId, appUser user) {
         return appUserRepository.findById(id).map(p->{
