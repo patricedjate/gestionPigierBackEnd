@@ -4,7 +4,6 @@ import com.pigier.gestionStage.security.filters.jwtAuthentificationFilter;
 import com.pigier.gestionStage.security.filters.jwtAuthorizationFilter;
 import com.pigier.gestionStage.security.service.userDetailServiceImpl;
 import com.pigier.gestionStage.security.service.accountService;
-import com.pigier.gestionStage.security.service.userDetailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

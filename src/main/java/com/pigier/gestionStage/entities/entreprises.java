@@ -3,7 +3,6 @@ package com.pigier.gestionStage.entities;
 import com.pigier.gestionStage.security.entities.appUser;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.ArrayList;
 import java.util.Collection;
