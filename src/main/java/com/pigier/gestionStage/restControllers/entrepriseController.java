@@ -22,6 +22,10 @@ public class entrepriseController {
     List<entreprises> getAll() {
         return service.liste();
     }
+    @GetMapping("/getbyuserid/{id}")
+    entreprises getByUserId(@PathVariable int id) {
+        return service.getByUserId(id);
+    }
     @PutMapping("/update/{id}")
     entreprises update(@PathVariable Integer id, entreprises  ent){
         return service.update(id,ent);

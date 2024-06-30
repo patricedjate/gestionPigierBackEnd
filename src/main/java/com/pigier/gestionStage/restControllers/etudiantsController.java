@@ -25,8 +25,16 @@ public class etudiantsController {
     List<etudiants> getAll() {
         return service.liste();
     }
+    @GetMapping("/{id}")
+    etudiants getbyId(@PathVariable int id) {
+        return service.listeid(id);
+    }
+    @GetMapping("/getEtud/{id}")
+    etudiants getbyUserId(@PathVariable int id) {
+        return service.etudid(id);
+    }
     @PutMapping("/update/{id}")
-    etudiants update(@PathVariable Integer id, etudiants etudiant){
+    etudiants update(@PathVariable Integer id, @RequestBody etudiants etudiant){
         return service.update(id,etudiant);
     }
     @DeleteMapping("/del/{id}")

@@ -44,6 +44,11 @@ public class entrepriseServiceImpl implements entrepriseService {
     }
 
     @Override
+    public entreprises getByUserId(Integer id) {
+        return repo.findByUserId(id);
+    }
+
+    @Override
     public String delete(Integer id) {
         repo.deleteById(id);
         return "élément supprimé avec succès";

@@ -48,7 +48,8 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults());
         http.authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/login","/addUser/*","/addRoleToUser/","/api-docs","/swagger-ui/index.html").permitAll()
+                        .requestMatchers("/login","/addUser","/etudiant/add","/etudiant/update/*","/addRoleToUser/*/*")
+                        .permitAll()
                         .anyRequest()
                         .authenticated())
                 .authenticationManager(authenticationManager);

@@ -9,6 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.Collection;
 import java.util.List;
 @Service
 @Transactional
@@ -22,14 +23,23 @@ public class accountServiceImpl implements accountService {
         this.appRolesRepository = appRolesRepository;
         this.passwordEncoder = passwordEncoder;
     }
-
+/*
     @Override
     public appUser addUser(appUser user) {
         String password = user.getPassword();
         user.setPassword(passwordEncoder.encode(password));
-        String role = user.getRoles().toString();
-
         return appUserRepository.save(user);
+    }
+*/
+    @Override
+    public appUser updateUser(Integer id,Integer roleId, appUser user) {
+        return appUserRepository.findById(id).map(p->{
+                p.setEmail(p.getEmail());
+                p.setUsername(p.getUsername());
+                p.setPassword(passwordEncoder.encode(p.getPassword()));
+                p.setRoles((Collection<appRoles>) appRolesRepository.findById(roleId).orElseThrow());
+                return appUserRepository.save(p);
+        }).orElseThrow();
     }
 
     @Override

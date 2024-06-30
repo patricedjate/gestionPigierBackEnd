@@ -30,7 +30,7 @@ public class applicationController {
     String delete(@PathVariable Integer id) {
         return service.delete(id);
     }
-    @PostMapping("/{etudiantId}/{stageId}/{appliactionId}/")
+    @PostMapping("/{etudiantId}/{stageId}/{applicationId}/")
     void addEtudiantAndStageToStage(@PathVariable Integer etudiantId, @PathVariable Integer stageId, @PathVariable Integer applicationId) {
         service.addEtudiantAndStageToApplication(etudiantId,stageId,applicationId);
     }

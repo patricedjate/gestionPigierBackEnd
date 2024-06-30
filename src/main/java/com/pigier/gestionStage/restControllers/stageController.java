@@ -35,5 +35,9 @@ public class stageController {
     List<stages> getAllByDomaine(@PathVariable String domaine) {
         return service.stageByDomaine(domaine);
     }
+    @GetMapping("/{id}")
+    stages getById(@PathVariable Integer id) {
+        return service.detail(id);
+    }
 
 }

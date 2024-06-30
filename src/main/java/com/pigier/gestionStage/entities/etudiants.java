@@ -19,8 +19,9 @@ public class etudiants {
     private String universite;
     private String niveau_etude;
     private String date_naissance;
+    private String domaine;
     @OneToMany
     private Collection<stages> stage = new ArrayList<>();
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private appUser user = new appUser();
 }

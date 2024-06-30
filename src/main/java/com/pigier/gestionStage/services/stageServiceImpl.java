@@ -41,6 +41,11 @@ public class stageServiceImpl implements stageService {
     }
 
     @Override
+    public stages detail(Integer id) {
+        return repo.findById(id).orElseThrow();
+    }
+
+    @Override
     public String delete(Integer id) {
         repo.deleteById(id);
         return "élément supprimé avec succès";

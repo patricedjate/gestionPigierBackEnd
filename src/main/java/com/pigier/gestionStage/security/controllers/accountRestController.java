@@ -13,10 +13,19 @@ public class accountRestController {
     public accountRestController(accountService accountService) {
         this.accountService = accountService;
     }
+    /*
     @PostMapping("/addUser")
     public appUser createUser(@RequestBody appUser user){
         return accountService.addUser(user);
     }
+
+     */
+    /*
+    @PutMapping("/updateUser/{id}/{roleId}")
+    public appUser createUser(@PathVariable Integer id,@PathVariable Integer roleId,@RequestBody appUser user){
+        return accountService.updateUser(id,roleId,user);
+    }
+     */
     @PostMapping("/addRoles")
     public appRoles createRole(@RequestBody appRoles role){
         return accountService.addRoles(role);
@@ -32,6 +41,10 @@ public class accountRestController {
     @GetMapping("/getuserbyUsername")
     public appUser getUserByUsername(String username){
         return accountService.loadUserByUsername(username);
+    }
+    @GetMapping("/getuserbyemail/{email}")
+    public appUser getUserByEmail(@PathVariable String email){
+        return accountService.loadUserByEmail(email);
     }
     @DeleteMapping("/delUser/{id}")
     public String delUserById(@PathVariable int id){
