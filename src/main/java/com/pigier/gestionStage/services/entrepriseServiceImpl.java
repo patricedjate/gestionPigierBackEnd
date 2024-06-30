@@ -6,21 +6,24 @@ import com.pigier.gestionStage.repositories.entreprisesRepository;
 import com.pigier.gestionStage.repositories.stageRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.List;
 @Service
 @Transactional
 public class entrepriseServiceImpl implements entrepriseService {
     private final entreprisesRepository repo;
     private final stageRepository stageRepo;
-
-    public entrepriseServiceImpl(entreprisesRepository repo, stageRepository stageRepo) {
+    private final PasswordEncoder passwordEncoder;
+    public entrepriseServiceImpl(entreprisesRepository repo, stageRepository stageRepo, PasswordEncoder passwordEncoder) {
         this.repo = repo;
         this.stageRepo = stageRepo;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public entreprises create(entreprises ent) {
+        String password = ent.getUser().getPassword();
+        ent.getUser().setPassword(passwordEncoder.encode(password));
         return repo.save(ent);
     }
 

@@ -21,7 +21,7 @@ public class entreprises {
     private String secteur_activite;
     @OneToMany
     private Collection<stages> stage = new ArrayList<>();
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private appUser user = new appUser();
 
 }
