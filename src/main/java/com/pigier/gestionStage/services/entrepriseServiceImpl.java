@@ -31,6 +31,9 @@ public class entrepriseServiceImpl implements entrepriseService {
     public List<entreprises> liste() {
         return repo.findAll();
     }
+    public entreprises byId(Integer id){
+        return repo.findById(id).orElse(null);
+    }
 
     @Override
     public entreprises update(Integer id, entreprises ent) {

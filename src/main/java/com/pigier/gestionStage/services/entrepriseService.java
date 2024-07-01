@@ -9,6 +9,7 @@ import java.util.List;
 public interface entrepriseService {
     entreprises create(entreprises ent);
     List<entreprises> liste();
+    entreprises byId(Integer id);
     entreprises update(Integer id, entreprises ent);
     entreprises getByUserId(Integer id);
     String delete(Integer id);
